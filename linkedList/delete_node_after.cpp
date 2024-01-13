@@ -30,14 +30,12 @@ void deleteNodeAfter(Node *&head, int target)
     }
     Node *ptr = head;
     Node *prePtr = ptr;
-    while (ptr->data != target)
+    while (prePtr->data != target)
     {
         prePtr = ptr;
         ptr = ptr->next;
     }
 
-    prePtr = ptr;
-    ptr = ptr->next;
     prePtr->next = ptr->next;
     delete ptr;
 }
